@@ -1,8 +1,8 @@
-package com.asmelo;
+package com.asmelo.labs;
 
 public enum Rating {
 
-    NO_RATE("\u2606 \u2606 \u2606 \u2606 \u2606"),
+    NOT_RATED("\u2606 \u2606 \u2606 \u2606 \u2606"),
     ONE_STAR("\u2605 \u2606 \u2606 \u2606 \u2606"),
     TWO_STAR("\u2605 \u2605 \u2606 \u2606 \u2606"),
     THREE_STAR("\u2605 \u2605 \u2605 \u2606 \u2606"),

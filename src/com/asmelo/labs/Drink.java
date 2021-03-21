@@ -1,4 +1,4 @@
-package com.asmelo;
+package com.asmelo.labs;
 
 import java.math.BigDecimal;
 import java.time.LocalTime;
@@ -17,7 +17,7 @@ public final class Drink extends Product {
     }
 
     @Override
-    public Product applyingRating(Rating rating) {
+    public Product applyRating(Rating rating) {
         return new Drink(getId(), getName(), getPrice(), rating);
     }
 }

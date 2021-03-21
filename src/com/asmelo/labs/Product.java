@@ -1,13 +1,13 @@
-package com.asmelo;
+package com.asmelo.labs;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.Objects;
 
-import static com.asmelo.Rating.*;
+import static com.asmelo.labs.Rating.*;
 
-public abstract class Product {
+public abstract class Product implements Rateable<Product> {
 
     public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.01);
 
@@ -17,7 +17,7 @@ public abstract class Product {
     private Rating rating;
 
     Product() {
-        this(0,"no_name", BigDecimal.ZERO, NO_RATE);
+        this(0,"no_name", BigDecimal.ZERO, NOT_RATED);
     }
 
     Product(int id, String name, BigDecimal price, Rating rating) {
@@ -28,7 +28,7 @@ public abstract class Product {
     }
 
     Product(int id, String name, BigDecimal price) {
-        this(id, name, price, NO_RATE);
+        this(id, name, price, NOT_RATED);
     }
 
     public int getId() {
@@ -43,6 +43,7 @@ public abstract class Product {
         return price;
     }
 
+    @Override
     public Rating getRating() {
         return rating;
     }
@@ -55,7 +56,7 @@ public abstract class Product {
         return LocalDate.now();
     }
 
-    public abstract Product applyingRating(Rating rating);
+//    public abstract Product applyRating(Rating rating);
 
     @Override
     public String toString() {
