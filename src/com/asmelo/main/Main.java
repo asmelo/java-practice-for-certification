@@ -16,13 +16,30 @@ public class Main {
     public static void main(String[] args) {
         ProductManager pm = new ProductManager(Locale.UK);
 
-        Product p1 = pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), NOT_RATED);
-        pm.printProductReport();
-        p1 = pm.reviewProduct(p1, FOUR_STAR, "Nice hot cup of Tea");
-        p1 = pm.reviewProduct(p1, TWO_STAR, "Nice hot cup of Tea");
-        p1 = pm.reviewProduct(p1, ONE_STAR, "Nice hot cup of Tea");
-        p1 = pm.reviewProduct(p1, ONE_STAR, "Nice hot cup of Tea");
-        pm.printProductReport();
+        pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), NOT_RATED);
+        pm.printProductReport(101);
+        pm.reviewProduct(101, FOUR_STAR, "Nice hot cup of Tea");
+        pm.reviewProduct(101, TWO_STAR, "Nice hot cup of Tea");
+        pm.reviewProduct(101, ONE_STAR, "Nice hot cup of Tea");
+        pm.reviewProduct(101, ONE_STAR, "Nice hot cup of Tea");
+        pm.printProductReport(101);
+
+        pm.createProduct(102, "Tea", BigDecimal.valueOf(1.99), NOT_RATED);
+        pm.printProductReport(102);
+        pm.reviewProduct(102, FOUR_STAR, "Nice hot cup of Tea");
+        pm.reviewProduct(102, TWO_STAR, "Nice hot cup of Tea");
+        pm.reviewProduct(102, ONE_STAR, "Nice hot cup of Tea");
+        pm.reviewProduct(102, ONE_STAR, "Nice hot cup of Tea");
+        pm.printProductReport(102);
+
+        pm.createProduct(103, "Tea", BigDecimal.valueOf(1.99), NOT_RATED);
+        pm.printProductReport(103);
+        pm.reviewProduct(103, FOUR_STAR, "Nice hot cup of Tea");
+        pm.reviewProduct(103, TWO_STAR, "Nice hot cup of Tea");
+        pm.reviewProduct(103, ONE_STAR, "Nice hot cup of Tea");
+        pm.reviewProduct(103, ONE_STAR, "Nice hot cup of Tea");
+        pm.printProductReport(103);
+
 //        Product p2 = productManager.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), FOUR_STAR);
 //        Product p3 = productManager.createProduct(103, "Cake", BigDecimal.valueOf(3.99), FIVE_STAR, LocalDate.now().plusDays(2));
 //        Product p4 = productManager.createProduct(105, "Cookie", BigDecimal.valueOf(3.99), TWO_STAR, LocalDate.now());
