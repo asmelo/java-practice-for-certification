@@ -17,35 +17,48 @@ public class Main {
     public static void main(String[] args) {
         ProductManager pm = new ProductManager("en-GB");
 
-        pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), NOT_RATED);
-//        pm.printProductReport(101);
-        pm.reviewProduct(101, FOUR_STAR, "Nice hot cup of Tea");
-        pm.reviewProduct(101, FOUR_STAR, "Nice hot cup of Tea");
-        pm.reviewProduct(101, FIVE_STAR, "Nice hot cup of Tea");
-        pm.reviewProduct(101, FOUR_STAR, "Nice hot cup of Tea");
-//        pm.printProductReport(101);
+//        pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), NOT_RATED);
+        pm.parseProduct("D,101,Tea,1.99,0,2019-09-19");
+//        pm.parseProduct("D,101,Tea,1.99,0");
+        pm.printProductReport(101);
 
-        pm.createProduct(102, "Tea", BigDecimal.valueOf(2.99), NOT_RATED);
-//        pm.printProductReport(102);
-        pm.reviewProduct(102, FOUR_STAR, "Nice hot cup of Tea");
-        pm.reviewProduct(102, TWO_STAR, "Nice hot cup of Tea");
-        pm.reviewProduct(102, ONE_STAR, "Nice hot cup of Tea");
-        pm.reviewProduct(102, ONE_STAR, "Nice hot cup of Tea");
-//        pm.printProductReport(102);
+//        pm.reviewProduct(101, FOUR_STAR, "Nice hot cup of Tea");
+//        pm.reviewProduct(101, FOUR_STAR, "Nice hot cup of Tea");
+//        pm.reviewProduct(101, FIVE_STAR, "Nice hot cup of Tea");
+//        pm.reviewProduct(101, FOUR_STAR, "Nice hot cup of Tea");
+        pm.parseReview("101,4,Nice hot cup of tea");
+        pm.parseReview("101,2,Bad");
+        pm.parseReview("101,4,Gorgious");
+        pm.parseReview("101,1,Perfect tea");
+        pm.parseReview("101,3,Nice hot cup of tea");
+        pm.parseReview("101,4,Nice hot cup of tea");
 
-        pm.createProduct(103, "Tea", BigDecimal.valueOf(2.50), NOT_RATED);
-//        pm.printProductReport(103);
-        pm.reviewProduct(103, ONE_STAR, "Nice hot cup of Tea");
-        pm.reviewProduct(103, ONE_STAR, "Nice hot cup of Tea");
-        pm.reviewProduct(103, ONE_STAR, "Nice hot cup of Tea");
-        pm.reviewProduct(103, ONE_STAR, "Nice hot cup of Tea");
-//        pm.printProductReport(103);
+        pm.printProductReport(101);
 
-        pm.createProduct(104, "Tea", BigDecimal.valueOf(2.60), NOT_RATED);
-        pm.reviewProduct(104, ONE_STAR, "Nice hot cup of Tea");
-        pm.reviewProduct(104, ONE_STAR, "Nice hot cup of Tea");
-        pm.reviewProduct(104, ONE_STAR, "Nice hot cup of Tea");
-        pm.reviewProduct(104, ONE_STAR, "Nice hot cup of Tea");
+        pm.parseProduct("F,109,Cakeee,1.98,0,2019-09-19");
+        pm.printProductReport(109);
+
+//        pm.createProduct(102, "Tea", BigDecimal.valueOf(2.99), NOT_RATED);
+////        pm.printProductReport(102);
+//        pm.reviewProduct(102, FOUR_STAR, "Nice hot cup of Tea");
+//        pm.reviewProduct(102, TWO_STAR, "Nice hot cup of Tea");
+//        pm.reviewProduct(102, ONE_STAR, "Nice hot cup of Tea");
+//        pm.reviewProduct(102, ONE_STAR, "Nice hot cup of Tea");
+////        pm.printProductReport(102);
+//
+//        pm.createProduct(103, "Tea", BigDecimal.valueOf(2.50), NOT_RATED);
+////        pm.printProductReport(103);
+//        pm.reviewProduct(103, ONE_STAR, "Nice hot cup of Tea");
+//        pm.reviewProduct(103, ONE_STAR, "Nice hot cup of Tea");
+//        pm.reviewProduct(103, ONE_STAR, "Nice hot cup of Tea");
+//        pm.reviewProduct(103, ONE_STAR, "Nice hot cup of Tea");
+////        pm.printProductReport(103);
+//
+//        pm.createProduct(104, "Tea", BigDecimal.valueOf(2.60), NOT_RATED);
+//        pm.reviewProduct(104, ONE_STAR, "Nice hot cup of Tea");
+//        pm.reviewProduct(104, ONE_STAR, "Nice hot cup of Tea");
+//        pm.reviewProduct(104, ONE_STAR, "Nice hot cup of Tea");
+//        pm.reviewProduct(104, ONE_STAR, "Nice hot cup of Tea");
 //        pm.printProductReport(104);
 
         Comparator<Product> ratingSorter = (p1, p2) -> p2.getRating().ordinal() - p1.getRating().ordinal();
