@@ -9,7 +9,7 @@ import static com.asmelo.labs.Rating.*;
 
 public abstract class Product implements Rateable<Product> {
 
-    public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.01);
+    public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(5);
 
     private int id;
     private String name;
